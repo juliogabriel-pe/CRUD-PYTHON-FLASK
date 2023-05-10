@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cadastro.css')}}">
+</head>
+<body>
+
+    <h1>Atualizar</h1>
+
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        <div>
+            {% for msg in mensagens %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <form action="/atualizardados" method="post">
+        
+        usuario: <input type="text" name="usuario"><br/><br/>
+        <button type="submit">Atualizar</button>
+        <a href="/"><button type="button">Pagina Inicial</button></a>
+
+    </form>
+
+</body>
+</html>
